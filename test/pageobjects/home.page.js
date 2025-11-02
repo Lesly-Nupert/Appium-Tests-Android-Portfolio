@@ -8,7 +8,7 @@ class HomePage {
     // SELECTORS
     // ==================================
 
-    // Get Home Screen
+    // Get HomePage
     get homeScreen() { return $('~Home-screen') };
 
     // Get first logo "webdriverIO"
@@ -22,8 +22,8 @@ class HomePage {
     // ACTIONS
     // ==================================
 
-    // Open Home Screen
-    async openHomePage() {
+    // Open Home Page
+    async waitForHomePageDisplayed() {
         await this.homeScreen.waitForDisplayed();
     };
 

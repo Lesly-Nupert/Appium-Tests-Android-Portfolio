@@ -4,7 +4,7 @@ const HomePage = require('../pageobjects/home.page')
 
 describe('Home Page Tests', () => {
     it('Home Page displayed with logo and title', async () => {
-        await HomePage.openHomePage();
+        await HomePage.waitForHomePageDisplayed();
         await expect(HomePage.homeScreen).toBeDisplayed();
 
         await HomePage.clickLogo();

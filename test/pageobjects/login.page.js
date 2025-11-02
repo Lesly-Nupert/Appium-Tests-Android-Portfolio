@@ -9,7 +9,7 @@ class LoginPage {
     // ==================================
 
     // Open Login form
-    get loginForm() { return $('//android.view.View[@content-desc="Login"]/android.view.ViewGroup') };
+    get loginForm() { return $('android=new UiSelector().text("Login")') };
 
     // Verify text "Login"
     get loginText() { return $('android=new UiSelector().className("android.widget.TextView").text("Login")') };
@@ -64,17 +64,34 @@ class LoginPage {
         await this.submitButtonLogin.click();
     };
 
-    // Verify popup elements in success case
-    async waitForSuccessPopup() {
+    // Verify popup success title
+    async waitForSuccessPopupTitle() {
         await this.successTitle.waitForDisplayed();
-        await this.successMessage.waitForDisplayed();
-        await this.okButton.waitForDisplayed();
+        return await this.successTitle.getText();
     };
 
-    // Verify errors message for each fiels with no valid data
-    async waitForErrorMessage() {
+    // Verify popup success message
+    async waitForSuccessPopupMessage() {
+        await this.successMessage.waitForDisplayed();
+        return await this.successMessage.getText();
+    };
+
+    // Verify popup succes button Ok
+    async waitForSuccessPopupButtonOk() {
+        await this.okButton.waitForDisplayed();
+        return await this.okButton.getText();
+    };
+
+    // Verify errors message for email fiel with invalid data
+    async waitForErrorMessageForEmail() {
         await this.emailErrorMessage.waitForDisplayed();
+        return await this.emailErrorMessage.getText();
+    };
+
+    // Verify errors message for password fiel with invalid data
+    async waitForErrorMessageForPassword() {
         await this.passwordErrorMessage.waitForDisplayed();
+        return await this.passwordErrorMessage.getText();
     };
 };
 
