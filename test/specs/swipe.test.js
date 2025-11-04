@@ -1,0 +1,54 @@
+const { expect } = require('@wdio/globals')
+const HomePage = require('../pageobjects/home.page')
+const SwipePage = require('../pageobjects/swipe.page');
+
+describe('Swipe Page Tests', () => {
+    //===================================
+    // HOOKS
+    // ==================================
+
+    before(async () => {
+        // Wait HomePage and Swipe Page display
+        await HomePage.waitForHomePageDisplayed();
+        await SwipePage.openSwipeScreen();
+    });
+
+    after(async () => {
+        // Quit application 
+        await browser.back();
+        await browser.back();
+    });
+
+    //===================================
+    // TESTS
+    // ==================================
+    it('Should swipe carousel multiple times and see first and last card', async () => {
+
+        // check first card
+        const card1 = await $('android=new UiSelector().text("FULLY OPEN SOURCE")');
+        expect(await card1.isExisting()).toBe(true);
+
+        //swipe 5 times
+        await SwipePage.swipeCarouselMultipleTimes(5);
+
+        // check last card
+        const lastCard = await $('android=new UiSelector().text("COMPATIBLE")');
+        expect(await lastCard.isExisting()).toBe(true);
+    });
+
+    it('Should display a text and to scroll until to display logo and texte hidden', async () => {
+        const verticalText = await SwipePage.getVerticalText()
+        expect(verticalText).toBe('Or swipe vertical to find what I\'m hiding.')
+
+        await SwipePage.swipeVerticalUp()
+
+        //swipe 3 times
+        await SwipePage.swipeVerticalMultipleTimes(3);
+
+        await SwipePage.getHiddenLogo()
+
+        const hiddenText = await SwipePage.getHiddenLogoText()
+        expect(hiddenText).toBe('You found me!!!')
+    });
+
+});
