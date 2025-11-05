@@ -50,7 +50,7 @@ describe('Drag And Drop Tests', () => {
         await browser.pause(1000)
     });
 
-    it('Should drag element to drop zone r1', async () => {
+    it('Should drag element to drop zone c1', async () => {
         // dragAndDrop-C1
         await browser.pause(1000)
         await DragAndDropPage.dragAndDropC1()
