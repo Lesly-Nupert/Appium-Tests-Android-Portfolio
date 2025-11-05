@@ -55,10 +55,5 @@ dist/
 build/
 *.tsbuildinfo
 
-# ========================================
-# FICHIERS D'ENTRAINEMENT - Training Files
-# ========================================
-Training.md
-
 # en cours de rédaction
 README.md
