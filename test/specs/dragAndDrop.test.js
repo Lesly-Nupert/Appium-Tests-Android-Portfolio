@@ -99,7 +99,7 @@ describe('Drag And Drop Tests', () => {
     });
 
 
-    it('Should display success message, retry text and button  for return to Drag and Drop Page', async () => {
+    it('Should display success message, retry text and button  for return to Drag and Drop Page - This test depend of previous tests', async () => {
 
         const message = await DragAndDropPage.getSuccessMessage();
         expect(message).toBe('Congratulations');
