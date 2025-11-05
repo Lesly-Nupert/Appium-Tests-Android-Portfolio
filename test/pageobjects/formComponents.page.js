@@ -86,6 +86,7 @@ class FormComponentsPage {
 
     // Click switch button
     async clickSwitchButton() {
+        await this.switchButton.waitForDisplayed();
         await this.switchButton.click();
     };
 
@@ -104,13 +105,14 @@ class FormComponentsPage {
 
     // Open dropdown
     async openDropdown() {
+        await this.dropdown.waitForDisplayed();
         await this.dropdown.click();
     };
 
     // Count items of dropdown
     async countItemsOfDropdown() {
         const items = await this.dropdownItems
-        // console.log('DEBUG ------ Nombre d\'items trouvés:', items.length);
+        console.log('DEBUG ------ Nombre d\'items trouvés:', items.length);
         return items.length;
     };
 
@@ -131,6 +133,7 @@ class FormComponentsPage {
 
     // Click active button
     async clikActiveButton() {
+        await this.activeButton.waitForDisplayed();
         await this.activeButton.click();
     };
 
@@ -142,6 +145,7 @@ class FormComponentsPage {
     
     // Click OK button to close popup
     async clikOkButton() {
+        await this.okButton.waitForDisplayed();
         await this.okButton.click();
     };
 };

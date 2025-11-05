@@ -1,4 +1,4 @@
-const { expect } = require('@wdio/globals')
+const { expect, browser } = require('@wdio/globals')
 const HomePage = require('../pageobjects/home.page')
 const FormComponentsPage = require('../pageobjects/formComponents.page')
 
@@ -63,6 +63,7 @@ describe('Form Components Tests', () => {
     });
 
     it('Should click an item and display it ', async () => {
+        
         await FormComponentsPage.openDropdown()
         await FormComponentsPage.selectItemByText('Appium is awesome')
 
