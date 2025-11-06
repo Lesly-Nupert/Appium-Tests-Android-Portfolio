@@ -62,17 +62,6 @@ describe('Form Components Tests', () => {
         expect(textOn2).toBe('Click to turn the switch ON')
     });
 
-    it('Should count all items of dropdown', async () => {
-        allure.addSeverity('normal');
-        allure.addFeature('Form Components');
-        allure.addStory('Count All Items Of Dropdown');
-
-        await FormComponentsPage.openDropdown()
-        const count = await FormComponentsPage.countItemsOfDropdown()
-        expect(count).toBe(4)
-        
-        await browser.back();
-    });
 
     it('Should click an item and display it ', async () => {
         allure.addSeverity('normal');
@@ -97,5 +86,17 @@ describe('Form Components Tests', () => {
         expect(message).toBe('This button is active')
 
         await FormComponentsPage.clikOkButton()
+    });
+
+    it('Should count all items of dropdown', async () => {
+        allure.addSeverity('normal');
+        allure.addFeature('Form Components');
+        allure.addStory('Count All Items Of Dropdown');
+
+        await FormComponentsPage.openDropdown()
+        const count = await FormComponentsPage.countItemsOfDropdown()
+        expect(count).toBe(4)
+        
+        await browser.back();
     });
 });

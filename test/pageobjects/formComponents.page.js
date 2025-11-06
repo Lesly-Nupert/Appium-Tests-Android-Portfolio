@@ -111,8 +111,13 @@ class FormComponentsPage {
 
     // Count items of dropdown
     async countItemsOfDropdown() {
-        await this.dropdownItems.waitForDisplayed()
+        await browser.waitUntil(async () => {
+            const items = await this.dropdownItems;
+            return items.length > 0;
+    }, { timeout: 5000, timeoutMsg: 'Dropdown items no appeared' });
+
         const items = await this.dropdownItems
+        
         console.log('DEBUG ------ Nombre d\'items trouvés:', items.length);
         return items.length;
     };
