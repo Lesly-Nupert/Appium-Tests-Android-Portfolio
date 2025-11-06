@@ -42,8 +42,8 @@ describe('Swipe Page Tests', () => {
 
         await SwipePage.swipeVerticalUp()
 
-        //swipe 3 times
-        await SwipePage.swipeVerticalMultipleTimes(3);
+        //swipe 2 times
+        await SwipePage.swipeVerticalMultipleTimes(2);
 
         await SwipePage.getHiddenLogo()
 
