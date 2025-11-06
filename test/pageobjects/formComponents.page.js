@@ -111,6 +111,7 @@ class FormComponentsPage {
 
     // Count items of dropdown
     async countItemsOfDropdown() {
+        await this.dropdownItems.waitForDisplayed()
         const items = await this.dropdownItems
         console.log('DEBUG ------ Nombre d\'items trouvés:', items.length);
         return items.length;
