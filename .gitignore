@@ -56,8 +56,5 @@ build/
 *.tsbuildinfo
 
 
-# ========================================
-# SCREENSHOTS / VIDEO README
-# ========================================
-capture_readme/
+
 
