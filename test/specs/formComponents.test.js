@@ -68,10 +68,10 @@ describe('Form Components Tests', () => {
         allure.addFeature('Form Components');
         allure.addStory('Selected Text Displayed');
         
-        await FormComponentsPage.openDropdown()
-        await FormComponentsPage.selectItemByText('Appium is awesome')
+        await FormComponents.openDropdown()
+        await FormComponents.selectItemByText('Appium is awesome')
 
-        const selectedText = await FormComponentsPage.getDropdownSelectedText();
+        const selectedText = await FormComponents.getDropdownSelectedText();
         expect(selectedText).toBe('Appium is awesome')
     });
 
@@ -80,12 +80,12 @@ describe('Form Components Tests', () => {
         allure.addFeature('Form Components');
         allure.addStory('Popup With Btn "OK" Displayed');
 
-        await FormComponentsPage.clikActiveButton()
+        await FormComponents.clikActiveButton()
         
-        const message = await FormComponentsPage.popupActiveButton()
+        const message = await FormComponents.popupActiveButton()
         expect(message).toBe('This button is active')
 
-        await FormComponentsPage.clikOkButton()
+        await FormComponents.clikOkButton()
     });
 
     it('Should count all items of dropdown', async () => {
@@ -93,8 +93,8 @@ describe('Form Components Tests', () => {
         allure.addFeature('Form Components');
         allure.addStory('Count All Items Of Dropdown');
 
-        await FormComponentsPage.openDropdown()
-        const count = await FormComponentsPage.countItemsOfDropdown()
+        await FormComponents.openDropdown()
+        const count = await FormComponents.countItemsOfDropdown()
         expect(count).toBe(4)
         
         await browser.back();
