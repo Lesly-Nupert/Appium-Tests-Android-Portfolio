@@ -9,7 +9,7 @@ Portfolio de tests automatisés développé pour l'application Android [wdio nat
 ### 📈 Métriques du projet
 - **11 tests automatisés** couvrant 5 modules fonctionnels
 - **100% de réussite** sur le pipeline Jenkins
-- **Type des test** : Tests fonctionnels end-to-end
+- **Type des test** : Tests fonctionnels et tests end-to-end
 - **Architecture modulaire** Page Object Pattern :  
 -- un fichier de page (classe, sélecteurs, méthodes)  
 -- un fichier de test/spec (import du page object, scénarios de test)
